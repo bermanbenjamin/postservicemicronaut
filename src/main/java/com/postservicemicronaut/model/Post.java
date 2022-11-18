@@ -22,13 +22,13 @@ public class Post {
 
     private String date;
 
-    private ArrayList<Integer> likes;
+    private ArrayList<String> likes;
 
-    private ArrayList<Integer> dislikes;
+    private ArrayList<String> dislikes;
 
     private ArrayList<Comment> comments;
 
-    public Post(String id, String userId, String title, String body, String date, ArrayList<Integer> likes, ArrayList<Integer> dislikes, ArrayList<Comment> comments) {
+    public Post(String id, String userId, String title, String body, String date, ArrayList<String> likes, ArrayList<String> dislikes, ArrayList<Comment> comments) {
         this.id = id;
         this.userId = userId;
         this.title = title;
@@ -80,19 +80,19 @@ public class Post {
         this.date = date;
     }
 
-    public ArrayList<Integer> getLikes() {
+    public ArrayList<String> getLikes() {
         return likes;
     }
 
-    public void setLikes(ArrayList<Integer> likes) {
+    public void setLikes(ArrayList<String> likes) {
         this.likes = likes;
     }
 
-    public ArrayList<Integer> getDislikes() {
+    public ArrayList<String> getDislikes() {
         return dislikes;
     }
 
-    public void setDislikes(ArrayList<Integer> dislikes) {
+    public void setDislikes(ArrayList<String> dislikes) {
         this.dislikes = dislikes;
     }
 
