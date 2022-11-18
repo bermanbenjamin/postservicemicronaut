@@ -2,6 +2,8 @@ package com.postservicemicronaut.service;
 
 import com.postservicemicronaut.model.Post;
 import com.postservicemicronaut.repository.PostRepository;
+import io.micronaut.core.annotation.Internal;
+import jakarta.inject.Inject;
 
 import java.util.ArrayList;
 
@@ -9,6 +11,7 @@ public class PostService {
 
     final PostRepository postRepository;
 
+    @Inject
     public PostService(PostRepository postRepository) {
         this.postRepository = postRepository;
     }

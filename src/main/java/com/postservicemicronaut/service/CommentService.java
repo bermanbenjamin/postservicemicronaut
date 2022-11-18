@@ -2,13 +2,14 @@ package com.postservicemicronaut.service;
 
 import com.postservicemicronaut.model.Comment;
 import com.postservicemicronaut.repository.CommentRepository;
+import jakarta.inject.Inject;
 
 import java.util.ArrayList;
 
 public class CommentService {
 
     final CommentRepository commentRepository;
-
+    @Inject
     public CommentService(CommentRepository commentRepository) {
         this.commentRepository = commentRepository;
     }
