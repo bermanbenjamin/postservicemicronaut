@@ -32,7 +32,6 @@
 			<url>https://repo.maven.apache.org/maven2</url>
 		</repository>
 	</repositories>
-
 	<dependencies>
 		<dependency>
 			<groupId>io.micronaut</groupId>
@@ -100,7 +99,6 @@
 			<scope>runtime</scope>
 		</dependency>
 	</dependencies>
-
 	<build>
 		<plugins>
 			<plugin>
