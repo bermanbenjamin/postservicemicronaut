@@ -21,7 +21,7 @@
     <micronaut.version>3.7.4</micronaut.version>
     <micronaut.data.version>3.8.1</micronaut.data.version>
     <micronaut.runtime>netty</micronaut.runtime>
-    <exec.mainClass>com.example.Application</exec.mainClass>
+    <exec.mainClass>com.postservicemicronaut.Application</exec.mainClass>
   </properties>
 
   <repositories>
@@ -136,7 +136,7 @@
             </path>
           </annotationProcessorPaths>
           <compilerArgs>
-            <arg>-Amicronaut.processing.group=com.example</arg>
+            <arg>-Amicronaut.processing.group=com.postservicemicronaut</arg>
             <arg>-Amicronaut.processing.module=postservicemicronaut</arg>
           </compilerArgs>
         </configuration>
