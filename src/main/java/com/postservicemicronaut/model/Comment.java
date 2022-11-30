@@ -1,17 +1,17 @@
 package com.postservicemicronaut.model;
 
 import io.micronaut.data.annotation.*;
+import io.micronaut.data.model.DataType;
 
 import javax.validation.constraints.NotNull;
 import java.util.ArrayList;
-import java.util.Date;
 
 @MappedEntity
 public class Comment {
 
     @Id
     @GeneratedValue(GeneratedValue.Type.AUTO)
-    private String id;
+    private Long id;
 
     @NotNull
     private String postId;
@@ -20,10 +20,12 @@ public class Comment {
     private String body;
     @DateCreated
     private String date;
-    private ArrayList<Integer> likes;
-    private ArrayList<Integer> dislikes;
+   
+    private Long likes;
 
-    public Comment(String id, String postId, String userId, String body, String date, ArrayList<Integer> likes, ArrayList<Integer> dislikes) {
+    private Long dislikes;
+
+    public Comment(Long id, String postId, String userId, String body, String date, Long likes, Long dislikes) {
         this.id = id;
         this.postId = postId;
         this.userId = userId;
@@ -34,11 +36,11 @@ public class Comment {
     }
 
     //generate getters and setters
-    public String getId() {
+    public Long getId() {
         return id;
     }
 
-    public void setId(String id) {
+    public void setId(Long id) {
         this.id = id;
     }
 
@@ -74,19 +76,19 @@ public class Comment {
         this.date = date;
     }
 
-    public ArrayList<Integer> getLikes() {
+    public Long getLikes() {
         return likes;
     }
 
-    public void setLikes(ArrayList<Integer> likes) {
+    public void setLikes(Long likes) {
         this.likes = likes;
     }
 
-    public ArrayList<Integer> getDislikes() {
+    public Long getDislikes() {
         return dislikes;
     }
 
-    public void setDislikes(ArrayList<Integer> dislikes) {
+    public void setDislikes(Long dislikes) {
         this.dislikes = dislikes;
     }
 }

@@ -12,7 +12,7 @@ public class Post {
 
     @Id
     @GeneratedValue(GeneratedValue.Type.UUID)
-    private String id;
+    private Long id;
 
     private String userId;
 
@@ -22,13 +22,13 @@ public class Post {
 
     private String date;
 
-    private ArrayList<String> likes;
+    private Long likes;
 
-    private ArrayList<String> dislikes;
+    private Long dislikes;
 
     private ArrayList<Comment> comments;
 
-    public Post(String id, String userId, String title, String body, String date, ArrayList<String> likes, ArrayList<String> dislikes, ArrayList<Comment> comments) {
+    public Post(Long id, String userId, String title, String body, String date, Long likes, Long dislikes, ArrayList<Comment> comments) {
         this.id = id;
         this.userId = userId;
         this.title = title;
@@ -40,11 +40,11 @@ public class Post {
     }
 
     //generate getters and setters
-    public String getId() {
+    public Long getId() {
         return id;
     }
 
-    public void setId(String id) {
+    public void setId(Long id) {
         this.id = id;
     }
 
@@ -80,19 +80,19 @@ public class Post {
         this.date = date;
     }
 
-    public ArrayList<String> getLikes() {
+    public Long getLikes() {
         return likes;
     }
 
-    public void setLikes(ArrayList<String> likes) {
+    public void setLikes(Long likes) {
         this.likes = likes;
     }
 
-    public ArrayList<String> getDislikes() {
+    public Long getDislikes() {
         return dislikes;
     }
 
-    public void setDislikes(ArrayList<String> dislikes) {
+    public void setDislikes(Long dislikes) {
         this.dislikes = dislikes;
     }
 

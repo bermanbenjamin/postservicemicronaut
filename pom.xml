@@ -59,23 +59,18 @@
 			<scope>compile</scope>
 		</dependency>
 		<dependency>
-			<groupId>io.micronaut.data</groupId>
-			<artifactId>micronaut-data-jdbc</artifactId>
+			<groupId>io.swagger.core.v3</groupId>
+			<artifactId>swagger-annotations</artifactId>
 			<scope>compile</scope>
 		</dependency>
 		<dependency>
-			<groupId>io.micronaut.sql</groupId>
-			<artifactId>micronaut-jdbc-hikari</artifactId>
+			<groupId>jakarta.annotation</groupId>
+			<artifactId>jakarta.annotation-api</artifactId>
 			<scope>compile</scope>
 		</dependency>
 		<dependency>
 			<groupId>ch.qos.logback</groupId>
 			<artifactId>logback-classic</artifactId>
-			<scope>runtime</scope>
-		</dependency>
-		<dependency>
-			<groupId>com.h2database</groupId>
-			<artifactId>h2</artifactId>
 			<scope>runtime</scope>
 		</dependency>
 		<dependency>
@@ -94,11 +89,16 @@
 			<scope>test</scope>
 		</dependency>
 		<dependency>
-			<groupId>com.h2database</groupId>
-			<artifactId>h2</artifactId>
-			<scope>runtime</scope>
+			<groupId>io.micronaut.data</groupId>
+			<artifactId>micronaut-data-jdbc</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>org.postgresql</groupId>
+			<artifactId>postgresql</artifactId>
+			<scope>compile</scope>
 		</dependency>
 	</dependencies>
+
 	<build>
 		<plugins>
 			<plugin>
@@ -149,5 +149,4 @@
 			</plugin>
 		</plugins>
 	</build>
-
 </project>

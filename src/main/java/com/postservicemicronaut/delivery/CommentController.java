@@ -21,25 +21,28 @@ public class CommentController {
         try {
             return HttpResponse.ok(commentService.findAll());
         } catch (Exception e) {
+        	e.printStackTrace();
             return HttpResponse.badRequest();
         }
 
     }
 
     @Get("/{id}")
-    public HttpResponse<com.postservicemicronaut.model.Comment> get(@PathVariable String id) {
+    public HttpResponse<com.postservicemicronaut.model.Comment> get(@PathVariable Long id) {
         try {
             return HttpResponse.ok(commentService.findById(id));
         } catch (Exception e) {
+        	e.printStackTrace();
             return HttpResponse.badRequest();
         }
     }
 
     @Get("/post/{id}/all")
-    public HttpResponse<Iterable<com.postservicemicronaut.model.Comment>> getAllByPostId(@PathVariable String id) {
+    public HttpResponse<Iterable<com.postservicemicronaut.model.Comment>> getAllByPostId(@PathVariable Long id) {
         try {
             return HttpResponse.ok(commentService.findAllByPostId(id));
         } catch (Exception e) {
+        	e.printStackTrace();
             return HttpResponse.badRequest();
         }
     }
@@ -50,6 +53,7 @@ public class CommentController {
             commentService.create(comment);
             return HttpResponse.ok();
         } catch (Exception e) {
+        	e.printStackTrace();
             return HttpResponse.badRequest();
         }
     }
@@ -60,16 +64,18 @@ public class CommentController {
             commentService.update(comment);
             return HttpResponse.ok();
         } catch (Exception e) {
+        	e.printStackTrace();
             return HttpResponse.badRequest();
         }
     }
 
     @Delete("/delete/{id}")
-    public HttpResponse<Object> delete(@PathVariable String id) {
+    public HttpResponse<Object> delete(@PathVariable Long id) {
         try {
             commentService.deleteById(id);
             return HttpResponse.ok();
         } catch (Exception e) {
+        	e.printStackTrace();
             return HttpResponse.badRequest();
         }
     }

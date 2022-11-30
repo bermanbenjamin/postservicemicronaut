@@ -2,9 +2,6 @@ package com.postservicemicronaut.service;
 
 import com.postservicemicronaut.model.Post;
 import com.postservicemicronaut.repository.PostRepository;
-import io.micronaut.core.annotation.Internal;
-import jakarta.inject.Inject;
-
 import jakarta.inject.Inject;
 
 import java.util.ArrayList;
@@ -18,7 +15,7 @@ public class PostService {
         this.postRepository = postRepository;
     }
 
-    public Post findById(String id) {
+    public Post findById(Long id) {
         try {
             return postRepository.findById(id).get();
         } catch (Exception e) {
@@ -26,7 +23,7 @@ public class PostService {
         }
     }
 
-    public Iterable<Post> findAllByUserId(String id) {
+    public Iterable<Post> findAllByUserId(Long id) {
         try {
             ArrayList<Post> finalPosts = new ArrayList<Post>();
             final Iterable<Post> posts = postRepository.findAll();
@@ -67,7 +64,7 @@ public class PostService {
             }
     }
 
-    public Post deleteById(String id) {
+    public Post deleteById(Long id) {
         try {
             Post post = postRepository.findById(id).get();
             postRepository.delete(post);

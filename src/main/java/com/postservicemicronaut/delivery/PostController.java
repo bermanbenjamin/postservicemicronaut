@@ -19,24 +19,27 @@ public class PostController {
         try {
             return HttpResponse.ok(postService.findAll());
         } catch (Exception e) {
+        	e.printStackTrace();
             return HttpResponse.badRequest();
         }
     }
 
     @Get("/{id}")
-    public MutableHttpResponse<Object> get(@PathVariable String id) {
+    public MutableHttpResponse<Object> get(@PathVariable Long id) {
         try {
             return HttpResponse.ok(postService.findById(id));
         } catch (Exception e) {
+        	e.printStackTrace();
             return HttpResponse.badRequest();
         }
     }
 
     @Get("/user/{id}/all")
-    public MutableHttpResponse<Object> getAllByUserId(@PathVariable String id) {
+    public MutableHttpResponse<Object> getAllByUserId(@PathVariable Long id) {
         try {
             return HttpResponse.ok(postService.findAllByUserId(id));
         } catch (Exception e) {
+        	e.printStackTrace();
             return HttpResponse.badRequest();
         }
     }
@@ -48,6 +51,7 @@ public class PostController {
             postService.create(post);
             return HttpResponse.ok();
         } catch (Exception e) {
+        	e.printStackTrace();
             return HttpResponse.badRequest();
         }
     }
@@ -58,16 +62,18 @@ public class PostController {
             postService.update(post);
             return HttpResponse.ok();
         } catch (Exception e) {
+        	e.printStackTrace();
             return HttpResponse.badRequest();
         }
     }
 
     @Delete("/delete/{id}")
-    public MutableHttpResponse<Object> delete(@PathVariable String id) {
+    public MutableHttpResponse<Object> delete(@PathVariable Long id) {
         try {
             postService.deleteById(id);
             return HttpResponse.ok();
         } catch (Exception e) {
+        	e.printStackTrace();
             return HttpResponse.badRequest();
         }
     }

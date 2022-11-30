@@ -17,7 +17,7 @@ public class CommentService {
         this.commentRepository = commentRepository;
     }
 
-    public Comment findById(String id) {
+    public Comment findById(Long id) {
         try {
             return commentRepository.findById(id).get();
         } catch (Exception e) {
@@ -25,7 +25,7 @@ public class CommentService {
         }
     }
 
-    public Iterable<Comment> findAllByPostId(String id) {
+    public Iterable<Comment> findAllByPostId(Long id) {
         try {
             final Iterable<Comment> comments = commentRepository.findAll();
             ArrayList<Comment> finalComments = new ArrayList<Comment>();
@@ -65,7 +65,7 @@ public class CommentService {
             }
     }
 
-    public Comment deleteById(String id) {
+    public Comment deleteById(Long id) {
         try {
             Comment comment = commentRepository.findById(id).get();
             commentRepository.delete(comment);
